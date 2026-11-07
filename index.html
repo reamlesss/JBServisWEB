@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font alternatives: uncomment a link here and the matching CSS variables in style.css. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Exo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -65,7 +72,7 @@
                     </a>
                 </div>
 
-                <div class="hero-facts">
+                <!-- <div class="hero-facts">
                     <div>
                         <strong>01</strong>
                         <span>OSOBNÍ PŘÍSTUP</span>
@@ -78,7 +85,7 @@
                         <strong>03</strong>
                         <span>PŘÍPRAVA NA STK</span>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="hero-bottom">
@@ -190,31 +197,71 @@
                 </p>
             </div>
 
-            <div class="price-table">
-                <div class="price-row price-header">
-                    <span>SLUŽBA</span>
-                    <span>ORIENTAČNÍ CENA</span>
-                </div>
+            <div class="price-grid">
+                <a class="price-card" href="#kontakt">
+                    <span class="price-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M10.5 3.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/>
+                            <path d="m16 16 4.5 4.5M10.5 7v3l2 1.5"/>
+                        </svg>
+                    </span>
+                    <span class="price-card-type">DIAGNOSTIKA</span>
+                    <h3>Diagnostika závad</h3>
+                    <p>Prověření závady a doporučení dalšího postupu.</p>
+                    <span class="price-card-bottom">
+                        <strong><small>od</small> 500 Kč</strong>
+                        <span class="price-card-arrow" aria-hidden="true">↗</span>
+                    </span>
+                </a>
 
-                <div class="price-row">
-                    <span>Diagnostika závad</span>
-                    <strong>od 500 Kč</strong>
-                </div>
+                <a class="price-card" href="#kontakt">
+                    <span class="price-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3.5 17.5a2.1 2.1 0 0 0 3 3l4.8-4.8a5 5 0 0 0 6.4-6.4l-3.1 3.1-3.2-3.2 3.3-2.9Z"/>
+                        </svg>
+                    </span>
+                    <span class="price-card-type">SERVIS</span>
+                    <h3>Základní servisní práce</h3>
+                    <p>Běžná údržba a servisní úkony bez náhradních dílů.</p>
+                    <span class="price-card-bottom">
+                        <strong><small>od</small> 1 000 Kč</strong>
+                        <span class="price-card-arrow" aria-hidden="true">↗</span>
+                    </span>
+                </a>
 
-                <div class="price-row">
-                    <span>Základní servisní práce <small>(bez náhradních dílů)</small></span>
-                    <strong>od 1 000 Kč</strong>
-                </div>
+                <a class="price-card" href="#kontakt">
+                    <span class="price-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 3.5h8l4 4v13H7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/>
+                            <path d="M15 3.5v5h5M9 14l2 2 4-4"/>
+                        </svg>
+                    </span>
+                    <span class="price-card-type">PŘÍPRAVA NA STK</span>
+                    <h3>Kontrola a příprava na STK</h3>
+                    <p>Kontrola vozidla a doporučení potřebných oprav.</p>
+                    <span class="price-card-bottom">
+                        <strong><small>od</small> 800 Kč</strong>
+                        <span class="price-card-arrow" aria-hidden="true">↗</span>
+                    </span>
+                </a>
 
-                <div class="price-row">
-                    <span>Kontrola a příprava na STK</span>
-                    <strong>od 800 Kč</strong>
-                </div>
-
-                <div class="price-row">
-                    <span>Opravy vozidla</span>
-                    <strong>Cena po posouzení</strong>
-                </div>
+                <a class="price-card" href="#kontakt">
+                    <span class="price-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="m3 13 2-5h14l2 5v6h-2v-2H5v2H3v-6Z"/>
+                            <path d="m5 8 1.5-3h11L19 8M3 13h18M7 13v2m10-2v2"/>
+                            <circle cx="7" cy="11" r=".7"/>
+                            <circle cx="17" cy="11" r=".7"/>
+                        </svg>
+                    </span>
+                    <span class="price-card-type">OPRAVY</span>
+                    <h3>Opravy vozidla</h3>
+                    <p>Rozsah a cenu opravy nejdříve společně probereme.</p>
+                    <span class="price-card-bottom">
+                        <strong class="price-card-custom">Cena po posouzení</strong>
+                        <span class="price-card-arrow" aria-hidden="true">↗</span>
+                    </span>
+                </a>
             </div>
 
             <p class="price-note">
@@ -308,9 +355,7 @@
                     Ať vás vůz bezpečně doveze.<br>
                     <em>O jeho servis se postaráme.</em>
                 </p>
-                <a href="#sluzby" class="button button-dark">
-                    Napsat nám ↗
-                </a>
+                <img class="quote-logo" src="logo.png" alt="JBAutoservis">
             </div>
         </section>
     </main>
