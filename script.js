@@ -16,6 +16,16 @@ nav.querySelectorAll('a').forEach(link => {
     });
 });
 
+const themeToggle = document.querySelector('.theme-toggle');
+const themeToggleLabel = themeToggle.querySelector('.theme-toggle-label');
+
+themeToggle.addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+
+    themeToggle.setAttribute('aria-pressed', String(isDarkMode));
+    themeToggleLabel.textContent = isDarkMode ? 'Světlý režim' : 'Tmavý režim';
+});
+
 // Aktuální rok v patičce
 document.getElementById('year').textContent = new Date().getFullYear();
 

@@ -11,7 +11,7 @@
     /* --font: 'DM Sans', sans-serif;
     --display: 'Barlow Condensed', sans-serif; */
 
-    --font: 'Inter', sans-serif;
+    /* --font: 'Inter', sans-serif; */
     /* --display: 'Oswald', sans-serif; */
 
     /* --font: 'Manrope', sans-serif; */
@@ -26,12 +26,13 @@
     /* --font: 'Roboto', sans-serif; */
     /* --display: 'Exo 2', sans-serif; */
 
-    /* --font: 'IBM Plex Sans', sans-serif; */
+    --font: 'IBM Plex Sans', sans-serif;
     --display: 'Rajdhani', sans-serif;
 }
 
 * {
     box-sizing: border-box;
+    
 }
 
 html {
@@ -96,7 +97,8 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #101112ef;
+    /* background: #101112ef; */
+    background: #10111266;
     position: sticky;
     top: 0;
     z-index: 20;
@@ -147,6 +149,55 @@ textarea {
 
 .nav a {
     transition: color .3s ease;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid #ffffff24;
+    background: #ffffff08;
+    color: #d7d9da;
+    font-size: 11px;
+    cursor: pointer;
+    transition:
+        color .2s ease,
+        border-color .2s ease,
+        background-color .2s ease;
+}
+
+.theme-toggle:hover {
+    color: #fff;
+    border-color: var(--accent);
+    background: #3b82f61a;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.theme-icon {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.theme-icon-sun {
+    display: none;
+}
+
+.dark-mode .theme-icon-moon {
+    display: none;
+}
+
+.dark-mode .theme-icon-sun {
+    display: block;
 }
 
 .nav-cta {
@@ -443,7 +494,7 @@ textarea {
 /* SERVICES */
 
 .services {
-    background: #151719;
+    background-color: var(--bg);
 }
 
 .section-head {
@@ -465,44 +516,81 @@ textarea {
 }
 
 .service-list {
-    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* border-top: 1px solid var(--line); */
 }
 
 .service-row {
-    display: grid;
-    grid-template-columns: 70px 1fr 30px;
-    align-items: center;
-    padding: 24px 5px;
-    border-bottom: 1px solid var(--line);
-    transition:
-        padding-left .35s cubic-bezier(.2, .8, .2, 1),
-        background-color .35s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 310px;
+    padding: 34px 30px 20px;
+    /* border-right: 1px solid var(--line); */
 }
 
-.service-row:hover {
-    padding-left: 17px;
-    background: #ffffff05;
+.service-row:first-child {
+    padding-left: 0;
+}
+
+.service-row:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    border: 1px solid #ffffff1a;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #3b82f61a, #3b82f603);
+}
+
+.service-icon svg {
+    width: 27px;
+    height: 27px;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.service-copy {
+    min-width: 0;
+    margin-top: 28px;
 }
 
 .service-no {
-    font: 600 17px var(--display);
+    display: block;
+    margin-bottom: 9px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .16em;
     color: var(--accent);
+}
+
+.service-no i {
+    padding: 0 4px;
+    color: #666d71;
+    font-style: normal;
 }
 
 .service-row h3 {
-    font: 600 27px var(--display);
     margin: 0;
+    font: 600 clamp(25px, 2.5vw, 34px)/1.02 var(--display);
 }
 
 .service-row p {
-    font-size: 11px;
-    color: #999;
-    margin: 2px 0 0;
-}
-
-.service-arrow {
-    font-size: 20px;
-    color: var(--accent);
+    max-width: 330px;
+    margin: 12px 0 0;
+    color: #9a9da0;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
 /* QUOTE */
@@ -749,22 +837,18 @@ textarea {
 .booking-form {
     position: relative;
     overflow: hidden;
+    color: var(--text);
     background:
-        radial-gradient(ellipse at 100% 0, #3b82f610, transparent 38%),
-        linear-gradient(145deg, #202428, #191c1f 72%);
+        radial-gradient(ellipse at 100% 0, #3b82f612, transparent 38%),
+        linear-gradient(145deg, #1d2023, #17191b 72%);
     border: 1px solid #ffffff12;
     border-radius: 10px;
     padding: 38px;
     box-shadow: 0 24px 70px #00000030;
-    box-shadow: 0 0px 26px #3b83f613;
 }
 
-.booking-form::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto;
-    height: 2px;
-    background: linear-gradient(360deg, var(--accent), #3b82f600 78%);
+.form-sub-info {
+    color: #9da5ad;
 }
 
 .form-title {
@@ -774,15 +858,17 @@ textarea {
     gap: 16px;
     padding-bottom: 21px;
     margin-bottom: 26px;
-    border-bottom: 1px solid #ffffff14;
+    border-bottom: 1px solid #ffffff16;
+    color: var(--text);
     font: 700 28px/1 var(--display);
 }
 
 .form-title span {
     padding: 7px 9px;
-    border: 1px solid #ffffff18;
+    border: 1px solid #ffffff1a;
     border-radius: 3px;
     color: #a4abb2;
+    background: #ffffff06;
     font: 600 8px/1.3 var(--font);
     letter-spacing: .1em;
     text-align: center;
@@ -803,7 +889,7 @@ textarea {
 }
 
 .form-grid label > span {
-    color: #777f84;
+    color: #858d93;
     font-size: 9px;
     font-weight: 400;
 }
@@ -878,7 +964,7 @@ textarea {
 
 .form-feedback {
     font-size: 12px;
-    color: var(--accent);
+    color: #75aaff;
     min-height: 18px;
     margin: 12px 0 6px;
 }
@@ -977,6 +1063,89 @@ textarea {
     color: var(--accent);
 }
 
+/* OPTIONAL DARK THEME */
+
+.dark-mode .intro,
+.dark-mode .pricing,
+.dark-mode .location {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.dark-mode .intro .section-kicker,
+.dark-mode .services .section-kicker,
+.dark-mode .pricing .section-kicker,
+.dark-mode .location .section-kicker {
+    color: #9a9da0;
+}
+
+.dark-mode .intro h2 em {
+    color: var(--accent);
+}
+
+.dark-mode .intro-copy p:not(.lead),
+.dark-mode .value-grid p,
+.dark-mode .pricing .section-head > p,
+.dark-mode .location .section-head > p {
+    color: #a0a5a7;
+}
+
+.dark-mode .under-link {
+    border-color: #555b5e;
+}
+
+.dark-mode .value-grid {
+    border-color: #303638;
+}
+
+.dark-mode .value-icon {
+    color: var(--accent);
+}
+
+.dark-mode .price-card {
+    background: #1b1e20;
+    border-color: #34393c;
+    box-shadow: 0 8px 24px #00000014;
+}
+
+.dark-mode .price-card:hover {
+    background: #222629;
+    border-color: #3b82f680;
+    box-shadow: 0 18px 34px #00000030;
+}
+
+.dark-mode .price-card-type,
+.dark-mode .price-card p,
+.dark-mode .price-card-bottom strong small,
+.dark-mode .price-note {
+    color: #a0a5a7;
+}
+
+.dark-mode .price-card-bottom {
+    border-color: #3a4043;
+}
+
+.dark-mode .quote-band {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.dark-mode .quote-inner em {
+    color: var(--accent);
+}
+
+.dark-mode .location .detail small {
+    color: #9a9da0;
+}
+
+.dark-mode .map-wrap {
+    background: #202428;
+}
+
+.dark-mode .map-wrap iframe {
+    filter: grayscale(1) invert(.88) hue-rotate(180deg) contrast(.85);
+}
+
 /* MOBILE */
 
 @media (max-width: 900px) {
@@ -1044,6 +1213,10 @@ textarea {
 
     .nav-cta {
         text-align: center;
+    }
+
+    .theme-toggle {
+        justify-content: center;
     }
 
     .hero {
@@ -1149,17 +1322,30 @@ textarea {
         padding: 21px;
     }
 
-    .service-row {
-        grid-template-columns: 40px 1fr 20px;
-        padding: 20px 0;
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-row,
+    .service-row:first-child,
+    .service-row:last-child {
+        min-height: 0;
+        padding: 26px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .service-row:last-child {
+        border-bottom: 0;
     }
 
     .service-row h3 {
-        font-size: 23px;
+        font-size: clamp(26px, 8vw, 34px);
     }
 
     .service-row p {
-        max-width: 280px;
+        max-width: 100%;
+        font-size: 11px;
     }
 
     .quote-band {
